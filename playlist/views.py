@@ -12,3 +12,8 @@ class PlaylistListView(generics.ListAPIView):
     serializer_class = PlaylistSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name']
+
+
+class PlaylistDetail(generics.RetrieveAPIView):
+    queryset = Playlist.objects.all()
+    serializer_class = PlaylistSerializer
